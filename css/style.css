@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    color: #333333;
+    background-color: #f6fbf4;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Do Hyeon", sans-serif;
+    font-weight: normal;
+}
+
+main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    margin: 40px 0 16px;
+    font-size: 28px;
+    color: #2d6a4f;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    /* 로고는 왼쪽, 메뉴는 오른쪽 끝 */
+    align-items: center;
+    /* 세로 가운데 */
+    padding: 16px 40px;
+    background-color: #2d6a4ff1;
+    color: #ffffff;
+
+    /* 헤더 고정 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+}
+
+.menu {
+    display: flex;
+    /* 메뉴를 가로로 */
+    gap: 24px;
+    /* 메뉴 사이 간격 */
+}
+
+.menu a:hover {
+    color: #ffd166;
+}
+
+.hero {
+    /*해더 높이만큰 추가여백*/
+    margin-top: 68px;
+
+    display: flex;
+    flex-direction: column;
+    /* 위에서 아래로 쌓기 */
+    justify-content: center;
+    /* 세로 가운데 */
+    align-items: center;
+    /* 가로 가운데 */
+    gap: 12px;
+    height: 320px;
+    background: url(https://picsum.photos/seed/picsum/1920/600) no-repeat center/cover;
+}
+
+.hero h2 {
+    margin: 0;
+    font-size: 40px;
+}
+
+.sub {
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-size: 13px;
+    color: #52796f;
+}
+
+.buttons {
+    display: flex;
+    /* flex 안에 또 flex */
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #2d6a4f;
+    color: #ffffff;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #1b4332;
+}
+
+.line {
+    background-color: #ffffff;
+    color: #2d6a4f;
+    border: 2px solid #2d6a4f;
+}
+
+.cards {
+    display: flex;
+    /* 카드 3장을 가로로 */
+    gap: 24px;
+}
+
+.card {
+    flex: 1;
+    /* 남은 공간을 똑같이 나눠 갖기 */
+    display: flex;
+    flex-direction: column;
+    /* 카드 안은 세로로 */
+    gap: 8px;
+    padding: 24px;
+    background-color: #ffffff;
+    border: 1px solid #d8f3dc;
+    cursor: pointer;
+    position: relative;
+}
+
+.card:hover {
+    border-color: #2d6a4f;
+    /* 가운데 카드 강조 */
+}
+
+.icon {
+    font-size: 48px;
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 22px;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    /* 가격은 왼쪽, 버튼은 오른쪽 */
+    align-items: center;
+    margin-top: auto;
+    /* 카드 맨 아래로 밀기 */
+}
+
+.price button {
+    padding: 6px 14px;
+    border: 0;
+    background-color: #f4a261;
+    color: #ffffff;
+}
+
+.price button:hover {
+    background-color: #e76f51;
+}
+
+.step {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 같은 너비 칸 3개 */
+    gap: 16px;
+}
+
+.step li {
+    display: flex;
+    /* grid 칸 안은 flex로 */
+    flex-direction: column;
+    align-items: center;
+    /* 번호 · 제목 · 설명 가로 가운데 */
+    gap: 8px;
+    padding: 24px 16px;
+    background-color: #ffffff;
+}
+
+.step h3 {
+    font-size: 20px;
+}
+
+.num {
+    display: flex;
+    justify-content: center;
+    /* 숫자를 상자 한가운데에 */
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #2d6a4f;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    /* 자리가 모자라면 다음 줄로 */
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.tags li {
+    padding: 6px 14px;
+    background-color: #d8f3dc;
+    color: #2d6a4f;
+    font-size: 15px;
+}
+
+.tags li:hover {
+    background-color: #2d6a4f;
+    color: #ffffff;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 가로 4칸 */
+    grid-template-rows: 150px 150px;
+    /* 세로 2줄 */
+    gap: 16px;
+}
+
+.gallery li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* 칸 안에서 세로 가운데 */
+    align-items: center;
+    /* 칸 안에서 가로 가운데 */
+    gap: 8px;
+    background-color: #ffffff;
+    border: 1px solid #d8f3dc;
+}
+
+.gallery li:first-child {
+    grid-column: span 2;
+    /* 가로 2칸 차지 */
+    grid-row: span 2;
+    /* 세로 2줄 차지 */
+    background-color: #2d6a4f;
+    color: #ffffff;
+}
+
+.emoji {
+    font-size: 40px;
+}
+
+.gallery li:first-child .emoji {
+    font-size: 80px;
+}
+
+.gallery h3 {
+    font-size: 20px;
+}
+
+.gallery li:hover {
+    border-color: #2d6a4f;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 24px;
+    background-color: #ffffff;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+}
+
+input:focus {
+    background-color: #fff9db;
+}
+
+select {
+    padding: 10px;
+}
+
+form button {
+    padding: 10px 20px;
+    border: 0;
+    background-color: #2d6a4f;
+    color: #ffffff;
+}
+
+form button:hover {
+    background-color: #1b4332;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 40px;
+    background-color: #1b4332;
+    color: #d8f3dc;
+    font-size: 13px;
+}
+
+.sns {
+    display: flex;
+    gap: 16px;
+}
+
+.sns a:hover {
+    color: #ffd166;
+}
+/*위로올라가는 버튼*/
+.top-btn {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+    border-radius: 50%;
+    background-color: #2d6a4f;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+
+    z-index: 1000;
+}
+
+.top-btn:hover {
+    background-color: #1b4332;
+}
+.badge {
+    position: absolute;
+    top: -10px;
+    right: 16px;
+
+    padding: 4px 12px;
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.new {
+    background-color: #2d6a4f;
+}
+
+.hot {
+    background-color: #e76f51;
+}
