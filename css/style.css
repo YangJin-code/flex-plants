@@ -407,7 +407,7 @@ footer {
     /* 메인 배너 */
     .hero {
         margin-top: 0;
-        height: 280px;
+        height: 50vh;
         padding: 20px;
         text-align: center;
     }
